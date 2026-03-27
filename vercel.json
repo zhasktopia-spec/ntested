@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/sekerip.lua",
+      "destination": "/api/sekerip.js"
+    }
+  ]
+}
