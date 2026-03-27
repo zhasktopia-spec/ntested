@@ -30,7 +30,7 @@ export default function handler(req, res) {
     
     const script = fs.readFileSync(scriptPath, 'utf8');
     
-    // Header anti-cache juga untuk response
+
     res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
     res.setHeader('Content-Type', 'text/plain');
     res.status(200).send(script);
