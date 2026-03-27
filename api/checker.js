@@ -38,6 +38,7 @@ export default function handler(req, res) {
   if (hasConsent) {
     res.setHeader('Set-Cookie', 'consent=true; Max-Age=86400; HttpOnly; SameSite=Lax');
     res.status(403).send(`
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
