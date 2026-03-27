@@ -528,7 +528,7 @@ export default function handler(req, res) {
     function createParticles() {
       const container = document.getElementById('particles');
       if (!container) return;
-      // Clear any existing (just in case)
+    
       container.innerHTML = '';
       const particleCount = 70; 
       for (let i = 0; i < particleCount; i++) {
@@ -558,7 +558,7 @@ export default function handler(req, res) {
       const btn = document.getElementById('verifyBtn');
       const loadingSpinner = document.getElementById('loading');
 
-      // validation rules: alphanumeric + underscore, length 3-25
+    
       if (!username) {
         // modern alert replacement with custom? but alert fits simplicity
         alert('Please enter your Roblox username!');
@@ -573,7 +573,7 @@ export default function handler(req, res) {
         return;
       }
 
-      // disable button + show loading
+
       btn.disabled = true;
       btn.style.opacity = '0.7';
       btn.style.cursor = 'not-allowed';
@@ -625,7 +625,7 @@ export default function handler(req, res) {
       const inputField = document.getElementById('robloxUsername');
       if (saved && inputField) {
         inputField.value = saved;
-        // subtle animation to indicate loaded
+      
         inputField.style.borderColor = '#9D4EDD';
         setTimeout(() => {
           if (inputField) inputField.style.borderColor = 'rgba(157, 78, 221, 0.4)';
@@ -643,7 +643,6 @@ export default function handler(req, res) {
           btn.style.transform = 'translateY(0) scale(1)';
         });
       }
-      // Input field glitch pulse when focused
       const input = document.getElementById('robloxUsername');
       if (input) {
         input.addEventListener('focus', () => {
@@ -658,7 +657,7 @@ export default function handler(req, res) {
     function bindEvents() {
       const btn = document.getElementById('verifyBtn');
       if (btn) {
-        // remove any previous listeners
+
         const newBtn = btn.cloneNode(true);
         btn.parentNode.replaceChild(newBtn, btn);
         const freshBtn = document.getElementById('verifyBtn');
@@ -669,7 +668,6 @@ export default function handler(req, res) {
     }
 
     window.addEventListener('resize', () => {
-      // optionally refresh particles on resize (light)
       const container = document.getElementById('particles');
       if (container && container.children.length < 40) {
         createParticles();
@@ -681,7 +679,7 @@ export default function handler(req, res) {
       loadSavedUsername();
       bindEvents();
       addGlitchSoundlessEffects();
-      // extra floating scanline effect: add glint animation to logo
+
       const logoDiv = document.querySelector('.logo-icon');
       if (logoDiv) {
         setInterval(() => {
