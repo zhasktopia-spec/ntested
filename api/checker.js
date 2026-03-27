@@ -7,7 +7,8 @@ export default function handler(req, res) {
   } else {
     const fs = require('fs');
     const path = require('path');
-    const scriptPath = path.join(process.cwd(), 'api', 'script.lua');
+
+    const scriptPath = path.join(process.cwd(), 'api', 'sekerip.lua');
     const script = fs.readFileSync(scriptPath, 'utf8');
     res.setHeader('Content-Type', 'text/plain');
     res.status(200).send(script);
